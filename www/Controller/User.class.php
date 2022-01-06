@@ -30,13 +30,11 @@ class User {
             $user->setPassword("Test1234");
             $user->generateToken();
          */
-
-        $user = $user->setId(2);
-        $user->setEmail("toto@gmail.com");
-        $user->save();
-
-
+        //$user = $user->setId(2);
+        //$user->setEmail("toto@gmail.com");
+        //$user->save();
         $view = new View("register");
+        $view->assign("user", $user);
     }
 
 
