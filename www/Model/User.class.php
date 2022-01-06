@@ -151,7 +151,7 @@ class User extends Sql
                     "required"=>true,
                     "class"=>"inputForm",
                     "id"=>"pwdForm",
-                    "error"=>"Votre mot de passe doit faire au min 8 caractères avec majscule, minuscules et des chiffres",
+                    "error"=>"Votre mot de passe doit faire au min 8 caractères avec majuscule, minuscules et des chiffres",
                     ],
                 "passwordConfirm"=>[
                     "type"=>"password",

@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Core\CleanWords;
 use App\Core\Sql;
+use App\Core\Verificator;
 use App\Core\View;
 use App\Model\User as UserModel;
 
@@ -23,16 +24,14 @@ class User {
     {
 
         $user = new UserModel();
-        /*
-            $user->setFirstname("YveS   ");
-            $user->setLastname("   SKrzYPCzyk");
-            $user->setEmail("y.SKRzypCZYK@GMail.com");
-            $user->setPassword("Test1234");
-            $user->generateToken();
-         */
-        //$user = $user->setId(2);
-        //$user->setEmail("toto@gmail.com");
-        //$user->save();
+
+        if( !empty($_POST)){
+
+            $result = Verificator::checkForm($user->getRegisterForm(), $_POST);
+            print_r($result);
+
+        }
+
         $view = new View("register");
         $view->assign("user", $user);
     }
